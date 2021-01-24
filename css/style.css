@@ -349,7 +349,7 @@ footer > .container {
   fill: var(--title-text-color);
   color: #000000;
   position: absolute;
-  left: 15px;
+  left: 12px;
   top: 50%;
 }
 .window-form input {
@@ -375,10 +375,9 @@ footer > .container {
 }
 .form-data {
   position: relative;
+  display: flex;
   margin-bottom: 10px;
-}
-.form-data input {
-  margin-top: 4px;
+  flex-direction: column;
 }
 
 input:focus + .form-img {
@@ -570,6 +569,8 @@ input {
 
 .team {
   display: flex;
+  padding: 0;
+  margin: 0;
 }
 .team > .link-photo:not(:last-child) {
   margin-right: 30px;
@@ -585,8 +586,9 @@ input {
   margin-bottom: 0;
 }
 .command {
+  margin-top: -2px;
   padding-top: 30px;
-  margin-bottom: 30px;
+  padding-bottom: 30px;
 }
 
 .name {
