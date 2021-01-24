@@ -436,6 +436,7 @@ input {
 }
 .condition-input-hidden:checked + span::before {
   background-image: url(../images/checked.svg);
+  background-repeat: no-repeat;
   background-color: var(--button-link-color);
   background-size: contain;
   background-origin: content-box;
