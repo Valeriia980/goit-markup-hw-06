@@ -43,7 +43,7 @@ body {
   font-family: "Roboto";
 }
 .container {
-  width: 1230px;
+  width: 1200px;
   margin-left: auto;
   margin-right: auto;
   padding-left: 15px;
@@ -282,11 +282,9 @@ h3 {
 }
 
 .modal {
-  position: relative;
+  position: absolute;
   top: 50%;
   left: 50%;
-
-  width: 528px;
 
   background-color: var(--primary-bgr);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -351,35 +349,46 @@ footer > .container {
   position: absolute;
   left: 12px;
   top: 50%;
+  transform: translateY(-50%);
 }
-.window-form input {
+.name-input,
+.tel-input,
+.email-input {
   height: 40px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   box-sizing: border-box;
   border-radius: 4px;
   padding-left: 42px;
 }
+
 .comment-area {
   height: 120px;
   width: 100%;
   border: 1px solid rgba(33, 33, 33, 0.2);
-
+  resize: none;
   border-radius: 4px;
   padding: 12px 16px;
   margin-top: 4px;
 }
-
+.text-form {
+  color: var(--primary-text-color);
+  font-size: 12px;
+  line-height: 1.16;
+  margin-bottom: 4px;
+}
+.name-label {
+  margin-bottom: 10px;
+  display: block;
+}
 .window-form {
   padding: 40px;
-  position: relative;
 }
 .form-data {
   position: relative;
-  display: flex;
-  margin-bottom: 10px;
-  flex-direction: column;
 }
-
+.condition-input-hidden:focus {
+  background: var(--button-link-color);
+}
 input:focus + .form-img {
   fill: #2196f3;
 }
@@ -404,10 +413,6 @@ input {
   justify-content: center;
 }
 
-.conditions-text {
-  padding-left: 8px;
-}
-
 .condition-input-hidden ~ span::before {
   content: "";
   display: inline-flex;
@@ -415,7 +420,7 @@ input {
   height: 15px;
   margin-right: 8px;
   border: 2px solid var(--title-text-color);
-  border-radius: 4px;
+  border-radius: 2px;
 }
 .condition-input-hidden {
   position: absolute;
@@ -423,32 +428,31 @@ input {
   width: 1px;
   height: 1px;
   margin: -1px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 .conditions-link {
   color: var(--button-link-color);
   display: inline-flex;
   text-decoration: underline;
 }
-.condition-input-hidden {
-  position: absolute;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-}
+
 .condition-input-hidden:checked + span::before {
   background-image: url(../images/checked.svg);
   background-repeat: no-repeat;
   background-color: var(--button-link-color);
   background-size: contain;
-  background-origin: content-box;
+  background-origin: border-box;
   border: 2px solid var(--button-link-color);
 }
-
+.condition-input-hidden:focus + span::before {
+  border: 2px solid var(--button-link-color);
+}
 .condition-label {
   display: flex;
   align-items: center;
   font-size: 14px;
   line-height: 1.71;
-  cursor: pointer;
 }
 .submit-conditions {
   display: flex;
